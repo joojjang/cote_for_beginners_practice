@@ -1,5 +1,11 @@
 def solution(nums):
     answer = 0
+    min = nums[0]
+
+    for i in range(len(nums)):
+        if nums[i] < min:
+            min = nums[i]
+            answer = i
 
     return answer
 
