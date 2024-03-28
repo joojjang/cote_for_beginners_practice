@@ -1,9 +1,17 @@
+# nums[i]의 최댓값 1,000이므로 direct address table 이용해도 무리 없음
+
 def solution(nums):
     answer = -1
     cnt = [0] * 1001
     for x in nums:
         cnt[x] += 1
 
+    '''
+    direct address table의 특성을 이용하면 (배열 인덱스 순서 = 오름차순)
+    최댓값이 정답이 되어야 하니까
+    for i in range(1, 1001) 할 필요 없이
+    내림차순으로 돌면 됨
+    '''
     for i in range(1000, 0, -1):
         if cnt[i] == 1:
             return i

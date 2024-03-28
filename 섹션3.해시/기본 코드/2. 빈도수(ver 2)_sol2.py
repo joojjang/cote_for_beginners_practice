@@ -1,7 +1,12 @@
-from collections import defaultdict, Counter
+from collections import Counter
+
 def solution(nums):
     answer = -1
-    
+    frequency = Counter(nums)
+
+    for key in frequency:
+        if frequency[key] == 1:
+            answer = max(key, answer) # answer을 그때그때 업데이트
  
     return answer
                             
@@ -11,3 +16,11 @@ print(solution([2, 1, 3, 2, 1, 3, 4, 5, 4, 5, 6, 7, 6 ,7, 8, 8]))
 print(solution([2235253, 5525612, 142561567, 123456789, 2235253, 560, 123456789, 142561567]))
 print(solution([11, 73, 156, 789, 345, 156, 789, 345, 678, 555, 678]))
 print(solution([1, 3, 1, 5, 7, 2, 3, 1, 5]))
+'''
+정답
+8
+-1
+5525612
+555
+7
+'''
