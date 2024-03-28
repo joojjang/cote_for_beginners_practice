@@ -1,4 +1,6 @@
-# 시간 초과
+import sys
+input = sys.stdin.readline
+
 def solution(sticks):
     answer = 1 # 보이는 막대기 개수
     n = len(sticks)
